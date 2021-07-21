@@ -1,4 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
+################INFO#################
+# Title: cURL me all Subdomains 
+# Author: Bruno Sergio @brunosgio
+################USAGE################
+# Eg.: ./curlmeallsubdomains.sh google.com
 
 red=`tput setaf 1`
 green=`tput setaf 2`
@@ -30,12 +35,12 @@ ${reset}"
 echo -e "\t\t${yellow}  Created by @brunosgio${reset}\n\n"
 }
 
-function discover(){
-  modules
+function modules(){
+  discover
   echo
 }
 
-function modules(){
+function discover(){
   echo "${green}[+] cURL subdomains from BufferOver.run...${reset}"
   curl -s https://dns.bufferover.run/dns?q=.$domain | jq -r .FDNS_A[] | cut -d',' -f2 | anew $subdomains
 
@@ -71,7 +76,7 @@ main(){
   fi
   subdomains="./curlme-$domain.txt"
 
-  discover
+  modules
 
   echo "[~] The process was done. A total of ${yellow}$(wc -l $subdomains | awk '{print $1}')${reset} subdomains were found."
   echo "[~] You can access the results at: ${yellow}$subdomains${reset}"
