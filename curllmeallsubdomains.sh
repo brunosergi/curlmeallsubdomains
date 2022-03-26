@@ -2,6 +2,9 @@
 ################INFO#################
 # Title: cURL me all Subdomains 
 # Author: Bruno Sergio
+############REQUIREMENTS#############
+# Anew: go install -v github.com/tomnomnom/anew@latest
+# Jq:   apt-get install -y jq
 ################USAGE################
 # Eg.: ./curlmeallsubdomains.sh google.com
 
