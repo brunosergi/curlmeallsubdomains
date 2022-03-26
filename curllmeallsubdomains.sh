@@ -88,7 +88,7 @@ main(){
 
 banner
 rawdomain=$1
-domain=$(sed s/'http[s]\?:\/\/'// <<< $rawdomain)
+domain=$(sed -e s/'http[s]\?:\/\/'// -e "s/\/$//" <<< $rawdomain)
 
 if [ $# -lt 1 ]; then
   echo -e "${red}[!] You need to enter a target domain.${reset}"
