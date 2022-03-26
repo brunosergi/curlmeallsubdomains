@@ -73,7 +73,6 @@ main(){
     tput cnorm; exit 1
   else
     touch ./curlme-$domain.txt
-    touch ./.temp-$domain.txt
   fi
   subdomains="./curlme-$domain.txt"
 
