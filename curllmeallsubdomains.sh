@@ -7,6 +7,7 @@
 # Jq:   apt-get install -y jq
 ################USAGE################
 # Eg.: ./curlmeallsubdomains.sh google.com
+# Eg.: ./curlmeallsubdomains.sh https://hackerone.com/
 
 red=`tput setaf 1`
 green=`tput setaf 2`
